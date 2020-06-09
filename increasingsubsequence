@@ -1,0 +1,20 @@
+from itertools import combinations
+n=int(input())
+l1=list(map(int,input().split()))
+l3=[]
+for i in range(len(l1)):
+    for j in (combinations(l1,i)):
+        l2=list(j)
+        if l2==sorted(l2):
+            l3.append(l2)
+z=(l3[len(l3)-1])
+m=len(z)
+l4=[]
+for i in l3:
+    if len(i)==m:
+        l4.append(i)
+a=tuple(l4[0])
+for k in range(1,len(l4)-1):
+    if tuple(l4[k])>a:
+        a=tuple(l4[k])
+print(*list(a))
